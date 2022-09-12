@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -32,6 +33,9 @@ namespace CustomerLogin.Areas.Identity.Pages.Account
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
+        public IdentityUser user;
+        public IQueryable<IdentityUser> users;
+
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             RoleManager<IdentityRole> roleManager,
@@ -50,6 +54,21 @@ namespace CustomerLogin.Areas.Identity.Pages.Account
 
             // foreach (var role in _roleManager.Roles) Console.WriteLine(role);
 
+        }
+
+        // this shows the method to get users list
+        public async Task GetUsers()
+        {
+            user = await _userManager.GetUserAsync(HttpContext.User);  // returns null if the user is not logged in
+            users = _userManager.Users;
+        }
+
+        public async Task<string> GetRoles(IdentityUser u)
+        {
+            string result = "";
+            IList<string> roles = await _userManager.GetRolesAsync(u);
+            foreach (var r in roles) result += r + " ";
+            return result;
         }
 
         /// <summary>

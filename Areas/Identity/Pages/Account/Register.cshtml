@@ -62,6 +62,37 @@
     </div>
 </div>
 
+@* // this shows the method to get users list *@
+<p>Current authorized user details:</p>
+
+@if (Model == null) { 
+    <p>Model is null</p>
+}
+else {
+    await Model.GetUsers();
+    if (Model.user != null)
+    {
+        string roles = await Model.GetRoles(Model.user);
+        <p>Id: @Model.user.Id</p>
+        <p>Roles: @roles</p>
+        <p>UserName: @Model.user.UserName</p>
+        <p>Email: @Model.user.Email</p>
+        <p>EmailConfirmed: @Model.user.EmailConfirmed</p>
+        <p>PhoneNumber: @Model.user.PhoneNumber</p>
+        <p>PhoneNumberConfirmed: @Model.user.PhoneNumberConfirmed</p>
+    }
+    else {
+        <p>User is not logged in.</p>
+    }
+    <br>
+    <p>List of all users:</p>
+    foreach (IdentityUser u in Model.users)
+    {
+        string roles = await Model.GetRoles(u);
+        <p>Id: @u.Id | Roles: @(roles)| UserName: @u.UserName | Email: @u.Email | EmailConfirmed: @u.EmailConfirmed | PhoneNumber: @u.PhoneNumber | PhoneNumberConfirmed: @u.PhoneNumberConfirmed</p>
+    }
+}
+
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
