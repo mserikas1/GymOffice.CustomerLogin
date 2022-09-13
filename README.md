@@ -7,9 +7,10 @@ This is for temporary app setting to test and setup login in the client app
 - One page ("Privacy policy") is closed for anonymous users (redirected to Denied page with the links to Login and Register)
 - "Privacy Policy" is also opened only for Customers: if a user is logged in but is not a Customer then "Access denied" page is shown
 - EmailSender added with SendGrid key in the Windows secret area. This allows user to confirm email and reset password
+- Facebook external login service
 
 ## TODO:
-- Add external login services (Facebook, Google). But there is basic external app functional (the user can install an app at a mobile and enter the code)
+- Add other external login services (Google, Twitter, MS).
 - Privacy policy page (see below)
 
 ## Privacy Policy for the Data from Facebook - should include (see https://developers.facebook.com/terms/):
@@ -27,14 +28,8 @@ This is for temporary app setting to test and setup login in the client app
     e. Incident Reporting
         i. If any of the following incidents happen, you must promptly, and no later than 24 hours after you become aware of the incident, notify us and provide us with information we request regarding:
             1. Any unauthorized (including in violation of these Terms or any other applicable terms or policies) Processing (including, for the avoidance of doubt, access, destruction, loss, alteration, disclosure, distribution or compromise) of Platform Data; or
-            2. Any incidents that are reasonably likely to compromise the security, confidentiality, or integrity of your IT Systems or your Service Provider’s or Sub-Service Provider’s IT Systems. 
+            2. Any incidents that are reasonably likely to compromise the security, confidentiality, or integrity of your IT Systems or your Service ProviderвЂ™s or Sub-Service ProviderвЂ™s IT Systems. 
         i. You must immediately begin remediation of the incident and reasonably cooperate with us, including by informing us in reasonable detail of the impact of the incident upon Platform Data and corrective actions being taken, and keeping us updated about your compliance with any notification or other requirements under applicable laws and regulations. 
 
 ## Privacy policy for Google: 
-    (Я не добавлял вход через гугл, потому что он требует подписки на Google Cloud, а та требует иметь 300 долларов на кредитной карте, хотя и бесплатна 3 месяца)
-    a. Личная и конфиденциальная информация
-        Не храните и не распространяйте личную или конфиденциальную информацию других людей без разрешения. Это включает использование конфиденциальной информации, такой как номера социального страхования США, номера банковских счетов, номера кредитных карт, изображения подписей и личные медицинские документы. В большинстве случаев, когда эта информация широко доступна где-либо в Интернете или в публичных записях, например, национальные идентификационные номера, указанные на правительственном веб-сайте, мы, как правило, не обрабатываем принудительные меры.
-    b. Фишинг
-        Не используйте этот продукт для фишинга. Это включает в себя запрос или сбор конфиденциальных данных, таких как пароли, финансовые данные и номера социального страхования. Смотрите наши Безопасный просмотр политики для получения дополнительной информации.
-
-
+    See https://developers.google.com/terms/api-services-user-data-policy
