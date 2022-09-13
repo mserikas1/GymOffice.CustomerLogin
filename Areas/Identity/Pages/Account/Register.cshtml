@@ -62,7 +62,7 @@
     </div>
 </div>
 
-@* // this shows the method to get users list *@
+@* // this shows the method to get users list 
 <p>Current authorized user details:</p>
 
 @if (Model == null) { 
@@ -91,7 +91,7 @@ else {
         string roles = await Model.GetRoles(u);
         <p>Id: @u.Id | Roles: @(roles)| UserName: @u.UserName | Email: @u.Email | EmailConfirmed: @u.EmailConfirmed | PhoneNumber: @u.PhoneNumber | PhoneNumberConfirmed: @u.PhoneNumberConfirmed</p>
     }
-}
+} *@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

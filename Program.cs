@@ -32,26 +32,27 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter(); // this is only for 
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
 
-/* https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-6.0&tabs=visual-studio
+// https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-6.0&tabs=visual-studio
 // External Authentication providers setup - needs the App name, URL and registration at the social accounts
 builder.Services.AddAuthentication()
-    .AddFacebook(options => {
-        IConfigurationSection FBAuthNSection =
-        config.GetSection("Authentication:FB");
-        options.ClientId = FBAuthNSection["ClientId"];
-        options.ClientSecret = FBAuthNSection["ClientSecret"];
-    })
-    .AddGoogle(options => {
-        IConfigurationSection googleAuthNSection =
-        config.GetSection("Authentication:Google");
-        options.ClientId = googleAuthNSection["ClientId"];
-        options.ClientSecret = googleAuthNSection["ClientSecret"];
-    })
-    .AddTwitter(twitterOptions => {
-        twitterOptions.ConsumerKey = config["Authentication:Twitter:ConsumerAPIKey"];
-        twitterOptions.ConsumerSecret = config["Authentication:Twitter:ConsumerSecret"];
-        twitterOptions.RetrieveUserDetails = true;
+    .AddFacebook(options =>
+    {
+        IConfigurationSection FBAuthNSection = builder.Configuration.GetSection("Authentication:FB");
+        options.AppId = FBAuthNSection["ClientId"];
+        options.AppSecret = FBAuthNSection["ClientSecret"];
+        options.CallbackPath = "/signin-facebook";
     });
+/*  .AddGoogle(options => {
+      IConfigurationSection googleAuthNSection =
+      builder.Configuration.GetSection("Authentication:Google");
+      options.ClientId = googleAuthNSection["ClientId"];
+      options.ClientSecret = googleAuthNSection["ClientSecret"];
+  })
+  .AddTwitter(twitterOptions => {
+      twitterOptions.ConsumerKey = builder.Configuration["Authentication:Twitter:ConsumerAPIKey"];
+      twitterOptions.ConsumerSecret = builder.Configuration["Authentication:Twitter:ConsumerSecret"];
+      twitterOptions.RetrieveUserDetails = true;
+  });
 */
 
 // example of Razor Identity Pages setup
