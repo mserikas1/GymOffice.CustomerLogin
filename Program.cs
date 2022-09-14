@@ -40,18 +40,19 @@ builder.Services.AddAuthentication()
         IConfigurationSection FBAuthNSection = builder.Configuration.GetSection("Authentication:FB");
         options.AppId = FBAuthNSection["ClientId"];
         options.AppSecret = FBAuthNSection["ClientSecret"];
-        options.CallbackPath = "/signin-facebook";
-    });
+        options.CallbackPath = "/signin-facebook"; // this is default, so this function call can be omitted
+    })
+   .AddTwitter(twitterOptions => {
+       twitterOptions.ConsumerKey = builder.Configuration["Authentication:Twitter:ConsumerAPIKey"];
+       twitterOptions.ConsumerSecret = builder.Configuration["Authentication:Twitter:ConsumerSecret"];
+       twitterOptions.RetrieveUserDetails = true;
+       twitterOptions.CallbackPath = "/signin-twitter"; // this is default, so this function call can be omitted
+   });
 /*  .AddGoogle(options => {
       IConfigurationSection googleAuthNSection =
       builder.Configuration.GetSection("Authentication:Google");
       options.ClientId = googleAuthNSection["ClientId"];
       options.ClientSecret = googleAuthNSection["ClientSecret"];
-  })
-  .AddTwitter(twitterOptions => {
-      twitterOptions.ConsumerKey = builder.Configuration["Authentication:Twitter:ConsumerAPIKey"];
-      twitterOptions.ConsumerSecret = builder.Configuration["Authentication:Twitter:ConsumerSecret"];
-      twitterOptions.RetrieveUserDetails = true;
   });
 */
 

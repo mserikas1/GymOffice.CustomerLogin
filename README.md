@@ -11,7 +11,8 @@ This is for temporary app setting to test and setup login in the client app
 
 ## TODO:
 - Add other external login services (Google, Twitter, MS).
-- Privacy policy page (see below)
+- Privacy policy page Home/Privacy (needed content see below)
+- Home/TermsOfService page (Twitter requires)
 
 ## Privacy Policy for the Data from Facebook - should include (see https://developers.facebook.com/terms/):
     a. This policy must comply with applicable law and regulations and must accurately and clearly explain what data you are Processing, how you are Processing it, the purposes for which you are Processing it, and how Users may request deletion of that data.
@@ -34,4 +35,4 @@ This is for temporary app setting to test and setup login in the client app
 ## Privacy policy for Google - See https://developers.google.com/terms/api-services-user-data-policy
 
 ## Twitter policy - https://developer.twitter.com/en/portal/petition/essential/terms
-You will maintain the security of the Twitter API and will not make available to a third party, any token, key, password or other login credentials to the Twitter API. You will use industry standard security measures to prevent unauthorized access or use of any of the features and functionality of the Twitter API, including access by viruses, worms, or any other harmful code or material. Additionally, you will keep Twitter Content (including, where applicable, personal data) confidential and secure from unauthorized access by using industry-standard organizational and technical safeguards for such data, and with no less care than it uses in connection with securing similar data you store. You will immediately notify Twitter consult and cooperate with investigations, assist with any required notices, and provide any information reasonably requested by Twitter if you know of or suspects any breach of security or potential vulnerability related to the Licensed Material and will promptly remedy such breach or potential vulnerability resulting from Your access to the Licensed Material.
+    You will maintain the security of the Twitter API and will not make available to a third party, any token, key, password or other login credentials to the Twitter API. You will use industry standard security measures to prevent unauthorized access or use of any of the features and functionality of the Twitter API, including access by viruses, worms, or any other harmful code or material. Additionally, you will keep Twitter Content (including, where applicable, personal data) confidential and secure from unauthorized access by using industry-standard organizational and technical safeguards for such data, and with no less care than it uses in connection with securing similar data you store. You will immediately notify Twitter consult and cooperate with investigations, assist with any required notices, and provide any information reasonably requested by Twitter if you know of or suspects any breach of security or potential vulnerability related to the Licensed Material and will promptly remedy such breach or potential vulnerability resulting from Your access to the Licensed Material.
